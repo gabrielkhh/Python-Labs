@@ -12,7 +12,8 @@ except IndexError:
 
 def check(word, index):
     if index < len(word):
-        if word[index] == "e" or word[index] == "l" or word[index] == "f":
+        char = word[index]
+        if char == "e" or char == "l" or char == "f" or char == "E" or char == "L" or char == "F":
             return check(word, index + 1)
         else:
             remainder = word[:index] + word[index + 1:]
