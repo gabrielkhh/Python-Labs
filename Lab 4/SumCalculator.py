@@ -10,18 +10,18 @@ except IndexError:
     print("Your input is invalid!")
     sys.exit()
 
+
 def sum_recursive(x):
     if x == 1:
         return 1
     elif x > 1:
         return sum_recursive(x - 1) + x
 
+
 def sum_iterative(x):
     sum = 0
-    while x > 0:
-        sum += x
-        x -= 1
-
+    for num in range(x):
+        sum += (num + 1)
     return sum
 
 result_recursive = 0
