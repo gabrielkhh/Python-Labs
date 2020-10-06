@@ -19,18 +19,18 @@ def check(word, index):
             remainder = word[:index] + word[index + 1:]
             return check(remainder, index)
     else:
-        return word
+        contains_elf = True
+        if ("e" not in word) and ("E" not in word):
+            contains_elf = False
+        if ("l" not in word) and ("L" not in word):
+            contains_elf = False
+        if ("f" not in word) and ("F" not in word):
+            contains_elf = False
+
+        return contains_elf
 
 
-remaining_characters = check(input_string, 0)
-is_elfish = True
-
-if ("e" not in remaining_characters) and ("E" not in remaining_characters):
-    is_elfish = False
-if ("l" not in remaining_characters) and ("L" not in remaining_characters):
-    is_elfish = False
-if ("f" not in remaining_characters) and ("F" not in remaining_characters):
-    is_elfish = False
+is_elfish = check(input_string, 0)
 
 if is_elfish:
     print("%s is one elfish word!" % input_string)
