@@ -10,10 +10,11 @@ except IndexError:
     print("Your input is invalid!")
     sys.exit()
 
+
 def check(word, index):
     if index < len(word):
-        char = word[index]
-        if char == "e" or char == "l" or char == "f" or char == "E" or char == "L" or char == "F":
+        char = word[index].lower()
+        if char == "e" or char == "l" or char == "f":
             return check(word, index + 1)
         else:
             remainder = word[:index] + word[index + 1:]
