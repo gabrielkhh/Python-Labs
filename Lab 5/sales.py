@@ -27,5 +27,4 @@ def goodSales(list1):
     total_sum = reduce(lambda a,b: a + b, list1)
     return list(filter(lambda c: ((c > (total_sum/len(list1))) is True), list1))
 
-
 print("The scaled number is: %a The sorted sales numbers are: %a The good sales numbers are: %a" % (scale(sales_list, scale_factor), sorted(sales_list), goodSales(sales_list)))
